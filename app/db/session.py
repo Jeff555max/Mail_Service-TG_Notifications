@@ -1,20 +1,22 @@
 import os
 from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
+from dotenv import load_dotenv
 
-# Получаем строку подключения к БД из переменных окружения
-DATABASE_URL = os.getenv("DATABASE_URL", "sqlite+aiosqlite:///./test.db")
+load_dotenv()  # Подгружаем .env
 
-# Создаем асинхронный движок SQLAlchemy
+DATABASE_URL = os.getenv("DATABASE_URL")
+if not DATABASE_URL:
+    raise ValueError("DATABASE_URL is not set! Проверь .env файл.")
+
 engine = create_async_engine(DATABASE_URL, future=True, echo=True)
 
-# Создаем фабрику сессий
-AsyncSessionLocal = sessionmaker(engine, class_=AsyncSession, expire_on_commit=False)
+AsyncSessionLocal = sessionmaker(
+    engine, class_=AsyncSession, expire_on_commit=False
+)
 
-# Базовый класс для моделей
 Base = declarative_base()
 
-# Зависимость FastAPI для получения сессии
 async def get_async_session():
     async with AsyncSessionLocal() as session:
         yield session
