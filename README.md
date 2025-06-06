@@ -47,23 +47,17 @@
 git clone https://github.com/Jeff555max/Mail_Service-TG_Notifications.git
 cd Mail_Service-TG_Notifications
 3. Создай и активируй виртуальное окружение
-sh
-Копировать
-Редактировать
+
 python -m venv .venv
 .venv\Scripts\activate
 4. Установи зависимости
-sh
-Копировать
-Редактировать
+
 pip install --upgrade pip
 pip install -r requirements.txt
 5. Настрой файл .env
 Пример содержимого для локального запуска:
 
-ini
-Копировать
-Редактировать
+
 DATABASE_URL=postgresql+asyncpg://postgres:postgres@localhost:5432/postgres
 REDIS_BROKER_URL=redis://localhost:6379/0
 Убедись, что PostgreSQL и Redis запущены на твоей машине!
@@ -72,44 +66,28 @@ REDIS_BROKER_URL=redis://localhost:6379/0
 (скачай redis для Windows, распакуй и запусти redis-server.exe)
 
 7. Запусти FastAPI
-sh
-Копировать
-Редактировать
+
 uvicorn app.main:app --reload
 Swagger UI будет доступен по адресу: http://127.0.0.1:8000/docs
 
 8. Запусти Celery worker
-sh
-Копировать
-Редактировать
+
 celery -A app.celery_app.celery worker --loglevel=info --pool=solo
 Для production-режима или на Linux можно использовать другой pool (gevent/prefork).
 
 🐳 Запуск через Docker Compose (Linux/macOS/WSL/Windows с Docker Desktop)
 Важно: Docker должен быть установлен и работать!
 
-sh
-Копировать
-Редактировать
+
 docker compose up --build
 Это поднимет сервис FastAPI, Celery worker, Redis и PostgreSQL в контейнерах.
 
 Swagger UI: http://localhost:8000/docs
 
-🛠️ Команды для разработчика
-Форматирование кода:
-black app/
-
-Проверка стиля:
-flake8 app/
-
-Тесты (если появятся):
-pytest
+🛠
 
 📑 Пример запроса для рассылки через API
-json
-Копировать
-Редактировать
+
 POST /api/campaigns/
 {
   "title": "Информирование клиентов",
@@ -119,10 +97,7 @@ POST /api/campaigns/
     {"email": "user2@mail.com"}
   ]
 }
-🏆 Авторы и поддержка
-Евгений Богачев
-Telegram: @JJJeFFF5
-GitHub: Jeff555max
+
 
 ⚠️ Важно
 На Windows запуск Docker/Redis/Postgres может требовать прав администратора!
