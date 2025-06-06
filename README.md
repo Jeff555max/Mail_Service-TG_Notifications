@@ -21,23 +21,20 @@
 
 ## 📂 Структура проекта
 
-Mail_Service-TG_Notifications/
-├── app/                  # Основное приложение
-│   ├── api/              # Роутеры FastAPI
-│   ├── db/               # Работа с БД
-│   ├── models/           # SQLAlchemy-модели
-│   ├── schemas/          # Pydantic-схемы
-│   ├── tasks/            # Celery задачи
-│   ├── utils/            # Утилиты и эмуляторы
-│   ├── __init__.py
-│   ├── celery_app.py     # Инициализация Celery
-│   ├── config.py         # Настройки
-│   └── main.py           # Главная точка входа FastAPI
-├── .env                  # Переменные окружения
-├── requirements.txt      # Зависимости
-├── docker-compose.yml    # Docker Compose
-├── Dockerfile            # Dockerfile
-├── README.md             # Описание проекта
+- **app/api/** — роутеры FastAPI
+- **app/db/** — работа с базой данных и сессиями
+- **app/models/** — SQLAlchemy-модели
+- **app/schemas/** — Pydantic-схемы (валидация данных)
+- **app/tasks/** — задачи Celery
+- **app/utils/** — утилиты, эмуляторы отправки
+- **celery_app.py** — инициализация Celery
+- **config.py** — настройки проекта
+- **main.py** — главная точка входа FastAPI
+- **.env** — переменные окружения
+- **requirements.txt** — зависимости Python
+- **docker-compose.yml** — настройка сервисов для Docker Compose
+- **Dockerfile** — сборка Docker-образа
+- **README.md** — описание и инструкция
 
 
 ## ⚡ Быстрый старт (Windows, без Docker)
