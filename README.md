@@ -85,6 +85,7 @@ celery -A app.celery_app.celery worker --loglevel=info --pool=solo
 🐳 Запуск через Docker Compose (Linux/macOS/WSL/Windows с Docker Desktop)
 
 docker compose up --build
+
 Это поднимет сервис FastAPI, Celery worker, Redis и PostgreSQL в контейнерах.
 
 Swagger UI: http://localhost:8000/docs
