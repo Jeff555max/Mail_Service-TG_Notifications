@@ -44,14 +44,17 @@
 
 ### 2. 
 git clone https://github.com/Jeff555max/Mail_Service-TG_Notifications.git
+
 cd Mail_Service-TG_Notifications
 3. Создай и активируй виртуальное окружение
 
 python -m venv .venv
+
 .venv\Scripts\activate
 4. Установи зависимости
 
 pip install --upgrade pip
+
 pip install -r requirements.txt
 5. Настрой файл .env
 Пример содержимого для локального запуска:
@@ -72,6 +75,7 @@ Swagger UI будет доступен по адресу: http://127.0.0.1:8000/
 8. Запусти Celery worker
 
 celery -A app.celery_app.celery worker --loglevel=info --pool=solo
+
 Для production-режима или на Linux можно использовать другой pool (gevent/prefork).
 
 🐳 Запуск через Docker Compose (Linux/macOS/WSL/Windows с Docker Desktop)
@@ -81,7 +85,6 @@ docker compose up --build
 
 Swagger UI: http://localhost:8000/docs
 
-🛠
 
 📑 Пример запроса для рассылки через API
 
