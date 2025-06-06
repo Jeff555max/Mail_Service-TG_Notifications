@@ -46,16 +46,19 @@
 git clone https://github.com/Jeff555max/Mail_Service-TG_Notifications.git
 
 cd Mail_Service-TG_Notifications
+
 3. Создай и активируй виртуальное окружение
 
 python -m venv .venv
 
 .venv\Scripts\activate
+
 4. Установи зависимости
 
 pip install --upgrade pip
 
 pip install -r requirements.txt
+
 5. Настрой файл .env
 Пример содержимого для локального запуска:
 
