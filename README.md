@@ -42,8 +42,7 @@
 ### 1. Установи Python 3.11+  
 [Скачать Python для Windows](https://www.python.org/downloads/windows/)
 
-### 2. Клонируй репозиторий
-```sh
+### 2. 
 git clone https://github.com/Jeff555max/Mail_Service-TG_Notifications.git
 cd Mail_Service-TG_Notifications
 3. Создай и активируй виртуальное окружение
@@ -76,8 +75,6 @@ celery -A app.celery_app.celery worker --loglevel=info --pool=solo
 Для production-режима или на Linux можно использовать другой pool (gevent/prefork).
 
 🐳 Запуск через Docker Compose (Linux/macOS/WSL/Windows с Docker Desktop)
-Важно: Docker должен быть установлен и работать!
-
 
 docker compose up --build
 Это поднимет сервис FastAPI, Celery worker, Redis и PostgreSQL в контейнерах.
@@ -104,7 +101,7 @@ POST /api/campaigns/
 
 На Windows Celery работайте с пулом --pool=solo для отладки.
 
-Для production и стабильной работы рекомендуем запускать всё через Docker/на Linux.
+
 
 
 
