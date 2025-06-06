@@ -24,3 +24,11 @@ async def get_campaign_status_view(campaign_id: int, db: AsyncSession = Depends(
         ) for c, u in rows
     ]
     return CampaignStatusList(campaign_id=campaign_id, statuses=statuses)
+
+
+@router.get("/{campaign_id}", response_model=CampaignRead)
+async def get_campaign_view(campaign_id: int, db: AsyncSession = Depends(get_async_session)):
+    campaign = await get_campaign(db, campaign_id=campaign_id)
+    if not campaign:
+        raise HTTPException(status_code=404, detail="Campaign not found.")
+    return campaign
