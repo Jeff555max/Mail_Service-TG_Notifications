@@ -73,6 +73,7 @@ REDIS_BROKER_URL=redis://localhost:6379/0
 7. Запусти FastAPI
 
 uvicorn app.main:app --reload
+
 Swagger UI будет доступен по адресу: http://127.0.0.1:8000/docs
 
 8. Запусти Celery worker
