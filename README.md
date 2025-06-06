@@ -23,21 +23,21 @@
 
 Mail_Service-TG_Notifications/
 ├── app/
-│ ├── api/ # Маршруты FastAPI
-│ ├── db/ # Подключение и инициализация БД
-│ ├── models/ # SQLAlchemy-модели
-│ ├── schemas/ # Pydantic-схемы для API
-│ ├── tasks/ # Celery-задачи
-│ ├── utils/ # Эмуляторы отправки, утилиты
+│ ├── api/ # 🚦 Эндпоинты FastAPI
+│ ├── db/ # 🗄️ Работа с БД и сессии
+│ ├── models/ # 📝 SQLAlchemy-модели
+│ ├── schemas/ # 📑 Pydantic-схемы
+│ ├── tasks/ # 📬 Celery задачи
+│ ├── utils/ # ⚙️ Вспомогательные функции, эмуляторы отправки
 │ ├── init.py
-│ ├── celery_app.py
-│ ├── config.py
-│ └── main.py # Главная точка входа FastAPI
-├── .env
-├── requirements.txt
-├── docker-compose.yml
-├── Dockerfile
-└── README.md
+│ ├── celery_app.py # ⚡ Инициализация Celery
+│ ├── config.py # ⚙️ Настройки проекта
+│ └── main.py # 🚀 Главная точка входа FastAPI
+├── .env # 🔑 Переменные окружения
+├── requirements.txt # 📦 Зависимости Python
+├── docker-compose.yml # 🐳 Docker Compose (оркестрация сервисов)
+├── Dockerfile # 🐳 Dockerfile (описание образа)
+├── README.md # 📖 Инструкция и описание
 
 yaml
 Копировать
@@ -139,5 +139,7 @@ GitHub: Jeff555max
 
 Для production и стабильной работы рекомендуем запускать всё через Docker/на Linux.
 
-📋
+
+
+
 
