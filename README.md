@@ -99,10 +99,15 @@ Swagger UI: http://localhost:8000/docs
 POST /api/campaigns/
 {
   "title": "Информирование клиентов",
+
   "text": "Скидки на все цветы только сегодня!",
+
   "users": [
+
     {"email": "user1@mail.com", "telegram_id": "12345"},
+
     {"email": "user2@mail.com"}
+
   ]
 }
 
