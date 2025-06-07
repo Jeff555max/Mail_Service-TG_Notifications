@@ -85,7 +85,7 @@ celery -A app.celery_app.celery worker --loglevel=info --pool=solo
 
 Для production-режима или на Linux можно использовать другой pool (gevent/prefork).
 
-#### 🐳 Запуск через Docker Compose (Linux/macOS/WSL/Windows с Docker Desktop)
+## 🐳 Запуск через Docker Compose (Linux/macOS/WSL/Windows с Docker Desktop)
 
 docker compose up --build
 
