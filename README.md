@@ -1,6 +1,6 @@
 # Mail_Service-TG_Notifications
 
-### Сервис рассылки Email и Telegram-уведомлений для бизнеса и команд
+### Сервис рассылки Email и Telegram-уведомлений 
 
 ---
 
