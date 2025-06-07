@@ -60,11 +60,14 @@ pip install --upgrade pip
 pip install -r requirements.txt
 
 5. Настрой файл .env
+
 Пример содержимого для локального запуска:
 
 
 DATABASE_URL=postgresql+asyncpg://postgres:postgres@localhost:5432/postgres
+
 REDIS_BROKER_URL=redis://localhost:6379/0
+
 Убедись, что PostgreSQL и Redis запущены на твоей машине!
 
 6. Запусти Redis
