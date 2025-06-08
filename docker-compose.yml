@@ -29,6 +29,9 @@ services:
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: JJJeFFF
+      POSTGRES_DB: mail_service
+    ports:
+      - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
