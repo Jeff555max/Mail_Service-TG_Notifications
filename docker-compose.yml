@@ -28,7 +28,7 @@ services:
     image: postgres:17
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: "Введите ваш пароль"
+      POSTGRES_PASSWORD: JJJeFFF
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
