@@ -115,10 +115,7 @@ POST /api/campaigns/
 }
 
 
-⚠️ Важно
-На Windows запуск Docker/Redis/Postgres может требовать прав администратора!
 
-На Windows Celery работайте с пулом --pool=solo для отладки.
 
 
 
