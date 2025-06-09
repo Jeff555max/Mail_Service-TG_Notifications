@@ -1,16 +1,7 @@
-from app.celery_app import celery
-from app.utils.notification import send_email, send_telegram
+from app.utils.celery_app import celery
 
 @celery.task
-def send_campaign(campaign_id, user_list, text):
-    for user in user_list:
-        email = user.get("email")
-        telegram_id = user.get("telegram_id")
-        try:
-            if email:
-                send_email(email, text)
-            if telegram_id:
-                send_telegram(telegram_id, text)
-            print(f"Уведомление отправлено пользователю {user}")
-        except Exception as e:
-            print(f"Ошибка отправки пользователю {user}: {e}")
+def send_notification(to, subject, body):
+    # Твоя логика отправки (email/telegram и т.д.)
+    print(f"Sending notification to {to}: {subject} — {body}")
+    return True

@@ -1,14 +1,20 @@
 import os
 from celery import Celery
 
-CELERY_BROKER_URL = os.getenv("REDIS_BROKER_URL", "redis://localhost:6379/0")
-CELERY_RESULT_BACKEND = os.getenv("REDIS_BROKER_URL", "redis://localhost:6379/0")
+CELERY_BROKER_URL = os.environ.get("REDIS_BROKER_URL")
+CELERY_RESULT_BACKEND = os.environ.get("REDIS_BROKER_URL")
 
 celery = Celery(
-    "mail_service",
+    "app",
     broker=CELERY_BROKER_URL,
-    backend=CELERY_RESULT_BACKEND
+    backend=CELERY_RESULT_BACKEND,
+    include=["app.tasks.send_notifications"]
 )
-celery.conf.task_routes = {
-    "app.tasks.send_notifications.send_campaign": {"queue": "mail_queue"},
-}
+
+celery.conf.update(
+    task_serializer="json",
+    accept_content=["json"],
+    result_serializer="json",
+    timezone="Europe/Moscow",
+    enable_utc=True,
+)

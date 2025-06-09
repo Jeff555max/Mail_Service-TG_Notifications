@@ -1,22 +1,24 @@
-import os
-from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine
+from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession
 from sqlalchemy.orm import sessionmaker, declarative_base
-from dotenv import load_dotenv
 
-load_dotenv()  # Подгружаем .env
+from sqlalchemy.pool import NullPool
+import os
 
-DATABASE_URL = os.getenv("DATABASE_URL")
-if not DATABASE_URL:
-    raise ValueError("DATABASE_URL is not set! Проверь .env файл.")
+DATABASE_URL = os.getenv("DATABASE_URL", "postgresql+asyncpg://postgres:JJJeFFF@db:5432/postgres")
 
-engine = create_async_engine(DATABASE_URL, future=True, echo=True)
+engine = create_async_engine(
+    DATABASE_URL, echo=True, poolclass=NullPool
+)
 
-AsyncSessionLocal = sessionmaker(
-    engine, class_=AsyncSession, expire_on_commit=False
+SessionLocal = sessionmaker(
+    bind=engine,
+    class_=AsyncSession,
+    expire_on_commit=False
 )
 
 Base = declarative_base()
 
-async def get_async_session():
-    async with AsyncSessionLocal() as session:
+# Вот этот метод нужен для FastAPI Depends
+async def get_async_session() -> AsyncSession:
+    async with SessionLocal() as session:
         yield session
