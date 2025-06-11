@@ -91,6 +91,9 @@ docker compose up --build
 
 Это поднимет сервис FastAPI, Celery worker, Redis и PostgreSQL в контейнерах.
 
+В файле docker-compose.yml введите свои данные для подключения к базе данных и Redis.
+
+
 Swagger UI: http://localhost:8000/docs
 
 

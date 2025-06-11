@@ -29,7 +29,7 @@ services:
     image: postgres:17
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: "Ваш пароль"
+      POSTGRES_PASSWORD: JJJeFFF
     ports:
       - "5432:5432"
     volumes:
