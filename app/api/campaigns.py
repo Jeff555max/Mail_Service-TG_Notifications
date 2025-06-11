@@ -4,6 +4,8 @@ from app.schemas.schemas import CampaignCreate, CampaignStatus
 from app.db.session import get_async_session
 from app.db.models import Campaign, CampaignUser, User, StatusEnum
 from app.celery_app import celery
+from sqlalchemy import select
+
 
 router = APIRouter(prefix="/campaigns")
 
