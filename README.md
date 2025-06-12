@@ -1,7 +1,7 @@
-# Mail_Service-TG_Notifications
+# Mail_Service-TG_Notifications 
 
 ### Сервис рассылки Email и Telegram-уведомлений 
-
+Non-Docker-версия
 ---
 
 ## 🚀 Описание проекта 
