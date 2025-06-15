@@ -99,7 +99,7 @@ docker compose up --build
 
 REDIS_BROKER_URL=redis://redis:6379/0
 
-DATABASE_URL=postgresql+asyncpg://postgres:postgres@db:5432/postgres
+DATABASE_URL=postgresql+asyncpg://postgres:postgres@db:5432/postgresвщслук
 
 Swagger UI: http://localhost:8000/docs
 
