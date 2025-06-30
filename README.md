@@ -101,6 +101,7 @@ REDIS_BROKER_URL=redis://redis:6379/0
 
 DATABASE_URL=postgresql+asyncpg://postgres:postgres@db:5432/postgres
 
+В фале docker-compose.yml укажи свой пароль для БД
 
 Swagger UI: http://localhost:8000/docs
 
