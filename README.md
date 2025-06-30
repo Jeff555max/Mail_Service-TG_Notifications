@@ -126,6 +126,7 @@ POST /api/campaigns/
   ]
 
 }
+
 2.
 
 Пример тела запроса (JSON)
