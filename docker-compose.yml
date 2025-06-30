@@ -16,7 +16,7 @@ services:
   worker:
     build: .
     command: >
-      sh -c "sleep 10 && celery -A app.utils.celery_app worker --loglevel=info"
+      sh -c "sleep 10 && celery -A app.celery_app worker --loglevel=info --pool=solo"
     env_file:
       - .env
     volumes:
@@ -29,7 +29,7 @@ services:
     image: postgres:17
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: "Ваш пароль"
+      POSTGRES_PASSWORD: "JJJeFFF"       # <-- ВСТАВЬ СВОЙ ПАРОЛЬ
     ports:
       - "5432:5432"
     volumes:
