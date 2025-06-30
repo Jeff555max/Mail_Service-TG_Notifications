@@ -109,6 +109,8 @@ Swagger UI: http://localhost:8000/docs
 
 POST /api/campaigns/
 
+1.
+
 {
 
   "title": "Информирование клиентов",
@@ -124,9 +126,30 @@ POST /api/campaigns/
   ]
 
 }
+2.
+
+Пример тела запроса (JSON)
+
+Нужно указать текст рассылки и список ID пользователей (user_ids), которым отправится уведомление. 
+Пример:
 
 
+{
+  "text": "Всем привет! Это тестовая рассылка.",
+  "user_ids": [1, 2, 3]
+}
 
+Ответ:
+
+ curl -X 'POST' \
+  'http://localhost:8000/campaigns/' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "text": "Всем привет! Это тестовая рассылка.",
+  "user_ids": [1, 2, 3]
+}
+'
 
 
 
