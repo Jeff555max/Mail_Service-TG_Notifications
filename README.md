@@ -77,7 +77,7 @@ REDIS_BROKER_URL=redis://localhost:6379/0
 
 uvicorn app.main:app --reload
 
-Swagger UI будет доступен по адресу: http://127.0.0.1:8000/docs
+Swagger UI будет доступен по адресу: http://127.0.0.1:8080/docs
 
 8. Запусти Celery worker
 
@@ -103,7 +103,7 @@ DATABASE_URL=postgresql+asyncpg://postgres:postgres@db:5432/postgres
 
 В фале docker-compose.yml укажи свой пароль для БД
 
-Swagger UI: http://localhost:8000/docs
+Swagger UI: http://localhost:8080/docs
 
 
 📑 Пример запроса для рассылки через API
@@ -145,7 +145,7 @@ POST /api/campaigns/
 Ответ:
 
  curl -X 'POST' \
-  'http://localhost:8000/campaigns/' \
+  'http://localhost:8080/campaigns/' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/json' \
   -d '{
@@ -169,7 +169,7 @@ POST /api/campaigns/
 
 
 curl -X 'POST' \
-  'http://127.0.0.1:8000/users/' \
+  'http://127.0.0.1:8080/users/' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/json' \
   -d '{
