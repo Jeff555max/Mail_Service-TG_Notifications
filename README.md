@@ -160,9 +160,12 @@ POST /api/campaigns/
 
 {
   "email": "user1@example.com",
+
   "telegram_id": "11111111"
 }
+
  Ответ:
+
 
 curl -X 'POST' \
   'http://127.0.0.1:8000/users/' \
