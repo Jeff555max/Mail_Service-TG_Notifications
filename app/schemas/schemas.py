@@ -18,7 +18,7 @@ class UserRead(BaseModel):
     telegram_id: Optional[str]
 
     class Config:
-        orm_mode = True
+        from_attributes = True  # Для pydantic v2 (замена orm_mode = True)
 
 class CampaignCreate(BaseModel):
     text: str
@@ -30,7 +30,7 @@ class CampaignRead(BaseModel):
     created_at: datetime
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 class CampaignStatus(BaseModel):
     user_id: int
