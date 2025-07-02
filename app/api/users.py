@@ -3,7 +3,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select
 from app.db.models import User
 from app.db.session import get_async_session
-from app.schemas.schemas import UserCreate, UserRead  # Обязательно создай эти схемы!
+from app.schemas.schemas import UserCreate, UserRead
 
 router = APIRouter(prefix="/users")
 
