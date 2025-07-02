@@ -23,7 +23,7 @@
 
 - **app/api/** — роутеры FastAPI
 - **app/db/** — работа с базой данных и сессиями
-- **app/models/** — SQLAlchemy-модели
+- **app/models/models/** — SQLAlchemy-модели
 - **app/schemas/** — Pydantic-схемы (валидация данных)
 - **app/tasks/** — задачи Celery
 - **app/utils/** — утилиты, эмуляторы отправки
