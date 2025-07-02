@@ -8,7 +8,7 @@ load_dotenv()  # ← Можно и нужно оставить
 
 print("DATABASE_URL:", os.environ.get("DATABASE_URL"))  # для отладки
 
-DATABASE_URL = os.getenv("DATABASE_URL", "postgresql+asyncpg://postgres:JJJeFFF@db:5432/postgres") #  Введите свой пароль вместо PASSWORD
+DATABASE_URL = os.getenv("DATABASE_URL", "postgresql+asyncpg://postgres:PASSWORD@db:5432/postgres") #  Введите свой пароль вместо PASSWORD
 
 engine = create_async_engine(
     DATABASE_URL, echo=True, poolclass=NullPool
