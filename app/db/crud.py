@@ -1,7 +1,7 @@
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
 from sqlalchemy.orm import selectinload
-from app.models.models import User, Campaign, CampaignUser, StatusEnum
+from app.db.models import User, Campaign, CampaignUser, StatusEnum
 
 async def create_user(db: AsyncSession, email: str, telegram_id: str = None):
     user = User(email=email, telegram_id=telegram_id)
