@@ -93,15 +93,15 @@ docker compose up --build
 
 В файле docker-compose.yml введите свои данные для подключения к базе данных и Redis.
 
-Настрой файл .env
+Создайте файл .env в корне проекта и настрой файл .env
 
 Пример содержимого для  запуска:
 
 REDIS_BROKER_URL=redis://redis:6379/0
 
-DATABASE_URL=postgresql+asyncpg://postgres:postgres@db:5432/postgres
+DATABASE_URL=postgresql+asyncpg://postgres:postgres@db:5432/postgres   --- Введите свой пароль
 
-В фале docker-compose.yml укажи свой пароль для БД
+В фале docker-compose.yml и \app\db\session.py укажите свой пароль для БД
 
 Swagger UI: http://localhost:8080/docs
 
