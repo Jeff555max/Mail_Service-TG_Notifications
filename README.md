@@ -28,7 +28,6 @@
 - **app/tasks/** — задачи Celery
 - **app/utils/** — утилиты, эмуляторы отправки
 - **celery_app.py** — инициализация Celery
-- **config.py** — настройки проекта
 - **main.py** — главная точка входа FastAPI
 - **.env** — переменные окружения
 - **requirements.txt** — зависимости Python
